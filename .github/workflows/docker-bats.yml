@@ -1,14 +1,11 @@
 name: docker-bats CI
+description: runs openBBT in a docker container for the pushed tag.
 
 on:
   push:
     tags:
     - '*'
 
-inputs:
-
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  args:
-    - ${GITHUB_REF##*/}
